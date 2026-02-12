@@ -1,4 +1,4 @@
-## Overview
+## Fine-tuning-Qwen2.5
 This repository demonstrates how to fine‑tune the Qwen/Qwen2.5‑1.5B language model using QLoRA, enabling efficient training on consumer GPUs while achieving strong performance on custom instruction‑based tasks.
 The project includes:
 - A complete QLoRA fine‑tuning pipeline
@@ -35,17 +35,22 @@ This makes Qwen 2.5 (1.5B) a great foundation for lightweight, specialized AI sy
 **Required fields:**
 - instruction → user question
 - output → model answer
+- 
 **Optional fields:**
 - category
 - metadata
 
 ## 🛠️ Fine‑Tuning Pipeline
+
 **1. Load dataset**
 Using datasets.load_dataset to read JSONL files.
+
 **2. Load Qwen base model**
 Loaded in 4‑bit quantized mode using BitsAndBytes.
+
 **3. Prepare for QLoRA**
 prepare_model_for_kbit_training() stabilizes training.
+
 **4. Apply LoRA adapters**
 Adapters are injected into:
 - q_proj
@@ -56,8 +61,10 @@ Adapters are injected into:
 - up_proj
 - down_proj
 These layers control attention and MLP behavior.
+
 **5. Train with SFTTrainer**
 Supervised fine‑tuning on your instruction → output pairs.
+
 **6. Evaluate**
 Compare original vs fine‑tuned model on test.jsonl
 
@@ -67,6 +74,7 @@ Create a JSONL file:
 ```bash
 {"instruction": "...", "output": "..."}
 ```
+
 **2. Update file paths**
 In the training script:
 ```bash
@@ -79,8 +87,10 @@ Example:
 def format_example(e):
     return f"Instruction: {e['instruction']}\nAnswer: {e['output']}"
 ```
+
 **4. Run training**
 Use the provided QLoRA script.
+
 **5. Evaluate**
 Run the evaluation script to compare performance.
 
