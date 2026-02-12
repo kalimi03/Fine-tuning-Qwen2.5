@@ -118,7 +118,7 @@ print(tokenizer.decode(outputs[0], skip_special_tokens=True))
 ## 👨‍💻 Author
 Mohammed Abdul Bari
 
-⭐ Star this repo if it helps your social media game!
+⭐ Star this repo if you find it helpful
 
 
 
