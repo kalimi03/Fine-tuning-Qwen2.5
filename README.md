@@ -108,6 +108,32 @@ inputs = tokenizer(prompt, return_tensors="pt")
 outputs = model.generate(**inputs, max_new_tokens=50)
 print(tokenizer.decode(outputs[0], skip_special_tokens=True))
 ```
+
+## Result
+``` bash
+====================================================================================================
+Instruction                              Without Fine-tuning            After Fine-tuning             
+====================================================================================================
+instruction:  Can I climb the fence?
+actual pred:  No, you cannot climb the fence. It is a no-go zone.
+finetuned_pred:  Climbing fences is unsafe because they can tip over. It’s better to stay on the ground.
+====================================================================================================
+instruction:  What is a clock face?
+actual pred:  A clock face is a circular device used to measure time. It typically has 12 numbers (1-12) evenly spaced around the circumference, with each number representing a specific time interval. The numbers are usually arranged in a clockwise direction, with the number 12 at the top and the number 1 at the bottom. The clock face also has a long hand (the hour hand) and a short hand (the minute hand) that move around the clock face to indicate the current
+finetuned_pred:  A clock face shows hours and minutes, like the numbers on a clock.
+====================================================================================================
+instruction:  What is a famous historical writer from the Renaissance?
+actual pred:  William Shakespeare
+finetuned_pred:  A famous historical writer from the Renaissance is William Shakespeare.
+====================================================================================================
+instruction:  What are nutrients?
+actual pred:  Nutrients are substances that are essential for the growth, development, and maintenance of living organisms. They are required in small amounts by the body and are obtained from food. There are several types of nutrients, including carbohydrates, proteins, fats, vitamins, and minerals. Carbohydrates provide energy, proteins are building blocks of the body, fats are a source of energy and insulation, vitamins are essential for various bodily functions, and minerals are necessary for the proper functioning of the body's cells and tissues.
+...
+2. **Choose the right ladder**: If you're not sure which ladder to use, consider the height of the ladder and the distance between the top of the ladder and the ground. A longer ladder can be
+finetuned_pred:  Climbing ladders can be dangerous because they can tip over. It’s safer to ask an adult to help you.
+====================================================================================================
+```
+
 ## 🙌 Acknowledgements
 - Qwen team for the base model
 - HuggingFace Transformers
