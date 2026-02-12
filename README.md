@@ -78,20 +78,6 @@ def format_example(e):
 Use the provided QLoRA script.
 5. Evaluate
 Run the evaluation script to compare performance.
-6. Deploy
-Export to:
-- GGUF (llama.cpp / mobile)
-- ONNX (TensorRT / mobile)
-- HuggingFace model hub
-
-## 📂 Repository Structure
-├── train.jsonl
-├── val.jsonl
-├── test.jsonl
-├── train.py
-├── evaluate.py
-├── README.md
-└── qwen2.5-1.5b-ft/
 
 ## 🧑‍💻 Example: Running Inference
 from transformers import AutoTokenizer, AutoModelForCausalLM
