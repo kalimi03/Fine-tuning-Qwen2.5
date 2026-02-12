@@ -35,7 +35,7 @@ This makes Qwen 2.5 (1.5B) a great foundation for lightweight, specialized AI sy
 **Required fields:**
 - instruction → user question
 - output → model answer
-- 
+
 **Optional fields:**
 - category
 - metadata
